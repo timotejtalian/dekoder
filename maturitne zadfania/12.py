@@ -1,0 +1,1 @@
+f = open("autobus.txt", "r")
