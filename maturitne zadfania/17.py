@@ -1,28 +1,23 @@
-veta = input("Napiste vetu: ")
+veta = input("Zadajte vetu: ").upper()
 sifra = []
+
 for pismeno in veta:
     if pismeno == " ":
-        sifra.append("0")
+        sifra.append("0")    
     else:
-        asci = ord(pismeno) - 65
-        pocet = asci % 3 + 1
-        cislo = asci // 3 + 1
-        sifra.append(str(cislo) * pocet)
+        znak = ord(pismeno) - 65
+        vystup = znak // 3 + 1
+        pocet = znak % 3 + 1
+        sifra.append(str(vystup)*pocet)
 print(" ".join(sifra))
+print(veta)
 
+string = "".join(sifra)
+max_zoz = {}
+for i in string:
+    max_zoz[i] = string.count(i)
+print(max_zoz)
 
-znaky = "".join(sifra)
-pocty = []
-for hodnota in znaky:
-    pocet_hodnoty = znaky.count(hodnota)
-    pocty.append(pocet_hodnoty)
-
-max_h = max(pocty)
-najcastejsie = []
-for hodnota in znaky:
-    pocet_hodnoty = znaky.count(hodnota)
-    if pocet_hodnoty == max_h:
-        if hodnota not in najcastejsie:
-            najcastejsie.append(hodnota)
-
-print("Najcastejsie policko:", " ".join(najcastejsie))
+max_hodnota = max(max_zoz.values())
+najvacsie_kluce = [k for k, v in max_zoz.items() if v == max_hodnota]
+print(" ".join(najvacsie_kluce))
