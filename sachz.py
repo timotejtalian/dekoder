@@ -4,7 +4,7 @@ chboard = []
 counter = 0
 img = Image.new('RGB', (640, 640), color = 'white')
 draw = ImageDraw.Draw(img)
-img2 = Image.open("dama.png")
+img2 = Image.open("dama.jpg")
 img2 = img2.resize((60, 60))
 prve_riesenie = False
 
