@@ -5,18 +5,18 @@ metoda = str(input("S/D: ")).lower()
 
 for riadok in f:
     if metoda == "s":
-        r_posun = random.randint(1,26) 
-        r_char = chr(r_posun + 96)
+        r_posun = random.randint(1,25) 
+        r_char = chr(r_posun + 97)
         sifra += r_char
     else:
-        r_posun = (riadok[0] + 96) 
+        r_posun = (riadok[0] + 97) 
         continue
     for znak in range(len(riadok)):
         if "a" <= riadok[znak] <= "z":
             if metoda == "s":
-                sifra += chr(((((ord(riadok[znak])) - 96) + r_posun) % 26) + 96)
+                sifra += chr(((((ord(riadok[znak])) - 97) + r_posun) % 26) + 97)
             else:
-                sifra += chr(((((ord(riadok[znak])) - 96) - r_posun) % 26) + 96)
+                sifra += chr(((((ord(riadok[znak])) - 97) - r_posun) % 26) + 97)
         else:
             sifra += riadok[znak]
 f2 = open("mak.txt", "w", encoding = "utf-8")
