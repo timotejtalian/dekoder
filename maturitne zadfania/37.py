@@ -10,7 +10,7 @@ f8 = open("maturitne zadfania\\5228.txt", "w", encoding="utf-8")
 f9 = open("maturitne zadfania\\5229.txt", "w", encoding="utf-8")
 pocet_SMS = sum(1 for line in vstup)
 print("Počet SMS správ: ", pocet_SMS)
-i = 0
+i = 1
 vstup.seek(0)
 for line in vstup:
     line = line.strip()
